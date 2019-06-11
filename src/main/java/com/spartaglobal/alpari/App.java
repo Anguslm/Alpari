@@ -12,5 +12,6 @@ public class App
 
         System.out.println(rates.getSuccessValue());
         System.out.println(rates.getTimeStamp());
+        System.out.println(rates.getBaseCurrency());
     }
 }

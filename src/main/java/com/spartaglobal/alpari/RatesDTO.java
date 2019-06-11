@@ -28,4 +28,7 @@ public class RatesDTO {
     public long getTimeStamp(){
         return (long)fullRatesFile.get("timestamp");
     }
+    public String getBaseCurrency(){
+        return (String)fullRatesFile.get("base");
+    }
 }
