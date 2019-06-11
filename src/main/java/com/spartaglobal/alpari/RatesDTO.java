@@ -25,4 +25,7 @@ public class RatesDTO {
     public boolean getSuccessValue(){
         return (boolean)fullRatesFile.get("success");
     }
+    public long getTimeStamp(){
+        return (long)fullRatesFile.get("timestamp");
+    }
 }
