@@ -11,5 +11,7 @@ public class App
        RatesDTO rates = new RatesDTO("resources/rates.JSON");
 
         System.out.println(rates.getSuccessValue());
+        System.out.println(rates.getTimeStamp());
+        System.out.println(rates.getBaseCurrency());
     }
 }

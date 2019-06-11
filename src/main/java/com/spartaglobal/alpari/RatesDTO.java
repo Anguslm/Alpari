@@ -25,4 +25,10 @@ public class RatesDTO {
     public boolean getSuccessValue(){
         return (boolean)fullRatesFile.get("success");
     }
+    public long getTimeStamp(){
+        return (long)fullRatesFile.get("timestamp");
+    }
+    public String getBaseCurrency(){
+        return (String)fullRatesFile.get("base");
+    }
 }

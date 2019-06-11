@@ -15,4 +15,12 @@ public class ratesTests {
     public void testSuccessResponse(){
         Assert.assertTrue(rates.getSuccessValue());
     }
+    @Test
+    public void testTimeStamp(){
+        Assert.assertEquals(rates.getTimeStamp(),1539182646);
+    }
+    @Test
+    public void testBaseCurrency(){
+        Assert.assertEquals(rates.getBaseCurrency(),"EUR");
+    }
 }
