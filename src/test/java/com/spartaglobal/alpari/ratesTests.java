@@ -9,9 +9,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ratesTests {
-    RatesDTO rates;
-    @Before
-    public void setup(){
+    private static RatesDTO rates;
+    @BeforeClass
+    public static void setup(){
         rates = new RatesDTO("resources/rates.JSON");
     }
     @Test
@@ -37,5 +37,14 @@ public class ratesTests {
             p.printStackTrace();
         }
         Assert.assertEquals(rates.getDate(),testdate);
+    }
+    @Test
+    public void testDateVsTimestamp(){
+        SimpleDateFormat formatter=new SimpleDateFormat("yyyy-MM-dd");
+        String dateFromTimeStamp;
+        String dateFromDate;
+        dateFromTimeStamp =formatter.format(rates.TimeStampToDate());
+        dateFromDate=formatter.format(rates.getDate());
+        Assert.assertEquals(dateFromDate,dateFromTimeStamp);
     }
 }
