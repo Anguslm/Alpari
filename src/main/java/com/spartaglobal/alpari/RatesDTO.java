@@ -5,6 +5,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import java.io.IOException;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class RatesDTO {
     private JSONObject fullRatesFile;
@@ -30,5 +32,16 @@ public class RatesDTO {
     }
     public String getBaseCurrency(){
         return (String)fullRatesFile.get("base");
+    }
+    public Date getDate(){
+        SimpleDateFormat formatter=new SimpleDateFormat("yyyy-MM-dd");
+        Date date= new Date();
+        try {
+            date =formatter.parse((String)fullRatesFile.get("date"));
+        }
+        catch (java.text.ParseException p){
+            p.printStackTrace();
+        }
+        return date;
     }
 }
