@@ -8,6 +8,11 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+       RatesDTO rates = new RatesDTO("resources/rates.JSON");
+
+        System.out.println(rates.getSuccessValue());
+        System.out.println(rates.getTimeStamp());
+        System.out.println(rates.getBaseCurrency());
+        System.out.println(rates.getDate());
     }
 }
